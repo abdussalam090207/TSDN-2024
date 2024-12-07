@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mobile Tab Menu</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" />
+    <style>
+        * {
+            margin: 0;
+        }
+
+        html,
+        body {
+            background: #f2f2f2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .container {
+            position: relative;
+            width: 300px;
+            height: 600px;
+            background: #0072ff;
+            border-radius: 25px;
+            overflow: hidden;
+            
+        }
+
+        .container p {
+            font-family: Calibri, sans-serif;
+            display: block;
+            line-height: 550px;
+            text-align: center;
+            color: #fff;
+            font-size: 30px;
+        }
+
+        .bottombar {
+            display: flex;
+            position: absolute;
+            width: 100%;
+            height: 55px;
+            bottom: 0;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .radio {
+            display: none;
+        }
+
+        .round {
+            position: relative;
+            width: 45px;
+            height: 45px;
+            background: #fff;
+            border-radius: 50%;
+            transform: translate(0, 5px);
+            transition: transform 0.3s ease;
+            will-change: transform;
+            cursor: pointer;
+            z-index: 1;
+            text-align: center;
+        }
+
+        .round i {
+            color: #aaa;
+            line-height: 45px;
+        }
+
+        .back {
+            width: 100%;
+            position: absolute;
+            background: #fff;
+            height: 45px;
+            bottom: 0;
+            z-index: 0;
+        }
+
+        .back::after {
+            content: "";
+            display: block;
+            width: 60px;
+            height: 60px;
+            background: #0072ff;
+            border-radius: 50%;
+            margin-top: -20px;
+            transform: translate(5px, 0);
+            will-change: transform;
+            transition: transform 0.2s ease;
+        }
+
+        .radio:checked+.round {
+            transform: translate(0, -7px);
+            box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.3);
+        }
+
+        .radio:checked+.round i {
+            color: #0072ff;
+        }
+
+        #bookmark:checked~.back::after {
+            transform: translate(5px, 0);
+        }
+
+        #list:checked~.back::after {
+            transform: translate(75px, 0);
+        }
+
+        #settings:checked~.back::after {
+            transform: translate(145px, 0);
+        }
+
+        #location:checked~.back::after {
+            transform: translate(215px, 0);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <p>Mobile Menu</p>
+
+        <div class="bottombar">
+            <input type="radio" class="radio" name="tap" id="bookmark" checked="checked" />
+            <label class="round" for="bookmark">
+                <i class="fa fa-bookmark"></i>
+            </label>
+
+            <input type="radio" class="radio" name="tap" id="list" />
+            <label class="round" for="list">
+                <i class="fa fa-list-check"></i>
+            </label>
+
+            <input type="radio" class="radio" name="tap" id="settings" />
+            <label class="round" for="settings">
+                <i class="fa fa-gear"></i>
+            </label>
+
+            <input type="radio" class="radio" name="tap" id="location" />
+            <label class="round" for="location">
+                <i class="fa fa-location-dot"></i>
+            </label>
+
+            <div class="back"></div>
+        </div>
+    </div>
+</body>
+
+</html>

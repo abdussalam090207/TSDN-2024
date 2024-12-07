@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SeOBless Health</title>
+    <style>
+        @keyframes fadeOut {
+            0% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        body {
+            animation: fadeIn 2s ease forwards;
+        }
+
+        body.fade-out {
+            animation: fadeOut 2s ease forwards;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom, #a1e3a1, #ffffff);
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .container {
+            text-align: center;
+            width: 100%;
+            height: 40%;
+            margin-top: 25%;
+            max-width: 900px;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+            position: absolute;
+            top: 65%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+
+        .heart {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .heart img {
+            width: 430px;
+            height: auto;
+            margin: 20px 0;
+            position: absolute;
+            top: 39%;
+            left: 52%;
+            transform: translate(-50%, -50%);
+        }
+
+        .text {
+            font-size: 16px;
+            color: #6d6d6d;
+            line-height: 1.5;
+
+        }
+
+        .text h2 {
+            font-size: 24px;
+            font-weight: bold;
+            color: #34a853;
+            margin-bottom: 10px;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .buttons button {
+            width: 45%;
+            padding: 10px;
+            background-color: #a2f7bb;
+            border: none;
+            border-radius: 10px;
+            color: #4caf50;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .buttons button:hover {
+            background-color: #8be89b;
+        }
+
+        .navigation {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .next-button {
+            background: linear-gradient(to right, #34a853, #a1e3a1);
+            border: none;
+            color: #fff;
+            font-size: 16px;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+        }
+
+        .indicator {
+            display: flex;
+            gap: 10px;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            background-color: #d3d3d3;
+            border-radius: 50%;
+        }
+
+        .dot.active {
+            background-color: #34a853;
+        }
+
+
+        .next-button:hover {
+            opacity: 0.9;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="heart">
+        <img src="img/bersama.png" alt="Heart Icon">
+    </div>
+
+    <div class="container">
+
+        <div class="text">
+            <h2>Indonesia Sehat</h2>
+            <p>Mari bersama-sama kita wujudkan Indonesia yang bebas dari masalah gizi. Mulai sekarang, jadilah bagian dari solusi
+            </p>
+        </div>
+        <br>
+        <br>
+        <br>
+        <div class="navigation">
+            <!-- Indicator -->
+            <div class="indicator">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot active"></span>
+            </div>
+
+            <!-- Tombol Next -->
+            <button class="next-button" onclick="window.location.href='login_singin.html'">Get Started ></button>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script>
+    document.querySelector('.next-button').addEventListener('click', function (e) {
+        e.preventDefault();
+        const container = document.querySelector('.container');
+        container.classList.add('fade-out');
+        
+        setTimeout(function () {
+            window.location.href = e.target.getAttribute('onclick').replace("window.location.href='", "").replace("'", "");
+        }, 500); // Durasi transisi pudar (0.5 detik)
+    });
+</script>

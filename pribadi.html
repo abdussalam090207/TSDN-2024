@@ -1,0 +1,294 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <script src="https://unpkg.com/unlazy@0.11.3/dist/unlazy.with-hashing.iife.js" defer init></script>
+    <script type="text/javascript">
+        window.tailwind.config = {
+            darkMode: ['class'],
+            theme: {
+                extend: {
+                    colors: {
+                        border: 'hsl(var(--border))',
+                        input: 'hsl(var(--input))',
+                        ring: 'hsl(var(--ring))',
+                        background: 'hsl(var(--background))',
+                        foreground: 'hsl(var(--foreground))',
+                        primary: {
+                            DEFAULT: 'hsl(var(--primary))',
+                            foreground: 'hsl(var(--primary-foreground))'
+                        },
+                        secondary: {
+                            DEFAULT: 'hsl(var(--secondary))',
+                            foreground: 'hsl(var(--secondary-foreground))'
+                        },
+                        destructive: {
+                            DEFAULT: 'hsl(var(--destructive))',
+                            foreground: 'hsl(var(--destructive-foreground))'
+                        },
+                        muted: {
+                            DEFAULT: 'hsl(var(--muted))',
+                            foreground: 'hsl(var(--muted-foreground))'
+                        },
+                        accent: {
+                            DEFAULT: 'hsl(var(--accent))',
+                            foreground: 'hsl(var(--accent-foreground))'
+                        },
+                        popover: {
+                            DEFAULT: 'hsl(var(--popover))',
+                            foreground: 'hsl(var(--popover-foreground))'
+                        },
+                        card: {
+                            DEFAULT: 'hsl(var(--card))',
+                            foreground: 'hsl(var(--card-foreground))'
+                        },
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer base {
+				:root {
+					--background: 0 0% 100%;
+--foreground: 240 10% 3.9%;
+--card: 0 0% 100%;
+--card-foreground: 240 10% 3.9%;
+--popover: 0 0% 100%;
+--popover-foreground: 240 10% 3.9%;
+--primary: 240 5.9% 10%;
+--primary-foreground: 0 0% 98%;
+--secondary: 240 4.8% 95.9%;
+--secondary-foreground: 240 5.9% 10%;
+--muted: 240 4.8% 95.9%;
+--muted-foreground: 240 3.8% 46.1%;
+--accent: 240 4.8% 95.9%;
+--accent-foreground: 240 5.9% 10%;
+--destructive: 0 84.2% 60.2%;
+--destructive-foreground: 0 0% 98%;
+--border: 240 5.9% 90%;
+--input: 240 5.9% 90%;
+--ring: 240 5.9% 10%;
+--radius: 0.5rem;
+				}
+				.dark {
+					--background: 240 10% 3.9%;
+--foreground: 0 0% 98%;
+--card: 240 10% 3.9%;
+--card-foreground: 0 0% 98%;
+--popover: 240 10% 3.9%;
+--popover-foreground: 0 0% 98%;
+--primary: 0 0% 98%;
+--primary-foreground: 240 5.9% 10%;
+--secondary: 240 3.7% 15.9%;
+--secondary-foreground: 0 0% 98%;
+--muted: 240 3.7% 15.9%;
+--muted-foreground: 240 5% 64.9%;
+--accent: 240 3.7% 15.9%;
+--accent-foreground: 0 0% 98%;
+--destructive: 0 62.8% 30.6%;
+--destructive-foreground: 0 0% 98%;
+--border: 240 3.7% 15.9%;
+--input: 240 3.7% 15.9%;
+--ring: 240 4.9% 83.9%;
+				}
+			}
+		</style>
+    <link rel="stylesheet"
+        href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" />
+
+</head>
+
+<body>
+
+
+    <div class="bg-background p-4 rounded-lg shadow-md">
+        <h1 class="text-2xl font-bold text-foreground">Laporan</h1>
+        <h2 class="text-lg text-muted-foreground">Berat Badan</h2>
+
+        <div class="grid grid-cols-4 gap-4 my-4">
+            <div class="text-center">
+                <p class="text-xl font-semibold">12</p>
+                <p class="text-muted-foreground">latihan</p>
+            </div>
+            <div class="text-center">
+                <p class="text-xl font-semibold">645.7</p>
+                <p class="text-muted-foreground">Kkal</p>
+            </div>
+            <div class="text-center">
+                <p class="text-xl font-semibold">64</p>
+                <p class="text-muted-foreground">Menit</p>
+            </div>
+        </div>
+
+        <h3 class="text-lg font-semibold text-foreground">Minggu Ini</h3>
+        <div class="flex justify-between my-2">
+            <span class="text-muted-foreground">Min</span>
+            <span class="text-muted-foreground">Sen</span>
+            <span class="text-muted-foreground">Sel</span>
+            <span class="text-muted-foreground">Rab</span>
+            <span class="text-muted-foreground">Kam</span>
+            <span class="text-muted-foreground">Jum</span>
+            <span class="text-muted-foreground">Sab</span>
+        </div>
+        <p class="text-center text-muted-foreground">0 hari beretnet</p>
+
+        <h3 class="text-lg font-semibold text-foreground">Hari ini</h3>
+        <p class="text-muted-foreground">Des 07, 2024</p>
+        <div class="flex items-center justify-between my-4">
+            <span class="text-muted-foreground">Pelacak aktivitas</span>
+            <button class="bg-secondary text-secondary-foreground hover:bg-secondary/80 p-2 rounded">Riwayat</button>
+        </div>
+        <p class="text-muted-foreground">Hasil latihan hari ini akan ditampilkan di sini. Anda juga bisa mencatat
+            aktivitas Anda sendiri!</p>
+        <button class="bg-primary text-primary-foreground hover:bg-primary/80 p-2 rounded mt-2">+ Tambahkan
+            aktivitas</button>
+
+        <h3 class="text-lg font-semibold text-foreground mt-6">Berat Badan (kg)</h3>
+        <div class="grid grid-cols-4 gap-4 my-4">
+            <div class="text-center">
+                <p class="text-xl font-semibold">Saat ini</p>
+                <p class="text-2xl font-bold">67.2</p>
+            </div>
+            <div class="text-center">
+                <p class="text-xl font-semibold">Target</p>
+                <p class="text-2xl font-bold">55.0</p>
+            </div>
+            <div class="text-center">
+                <p class="text-xl font-semibold">30 hari terakhir</p>
+                <p class="text-2xl font-bold">0.0</p>
+            </div>
+            <div class="text-center">
+                <p class="text-xl font-semibold">Rata-rata</p>
+                <p class="text-2xl font-bold">66.1</p>
+            </div>
+        </div>
+
+        <div class="my-4">
+            <img aria-hidden="true" alt="weight-graph"
+                src="https://openui.fly.dev/openui/600x200.svg?text=Weight+Graph" />
+        </div>
+
+        <h3 class="text-lg font-semibold text-foreground">BMI</h3>
+        <div class="flex justify-between items-center my-4">
+            <p class="text-2xl font-bold">24.3</p>
+            <span class="text-muted-foreground">berat badan yang sehat</span>
+            <button class="bg-accent text-accent-foreground hover:bg-accent/80 p-2 rounded">✏️</button>
+        </div>
+    </div>
+
+
+    <div class="bottom-nav">
+        <div class="bottombar">
+            <input type="radio" class="radio" name="tap" id="bookmark" checked="checked" />
+            <label class="round" for="bookmark">
+                <a href="page-index.html"><i class="fa fa-home"></i></a>
+            </label>
+
+            <input type="radio" class="radio" name="tap" id="list" />
+            <label class="round" for="list">
+                <a href="pribadi.html"><i class="fa-solid fa-user"></i></a>
+            </label>
+
+            <input type="radio" class="radio" name="tap" id="settings" />
+            <label class="round" for="settings">
+                <i class="fa fa-gear"></i>
+            </label>
+
+            <input type="radio" class="radio" name="tap" id="location" />
+            <label class="round" for="location">
+                <i class="fa-brands fa-rocketchat"></i>
+            </label>
+
+            <div class="back"></div>
+        </div>
+    </div>
+    </div>
+</body>
+<style>
+    .bottombar {
+        display: flex;
+        position: absolute;
+        width: 100%;
+        height: 55px;
+        bottom: 0;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .radio {
+        display: none;
+    }
+
+    .round {
+        position: relative;
+        width: 45px;
+        height: 45px;
+        background: #fff;
+        border-radius: 50%;
+        transform: translate(0, 5px);
+        transition: transform 0.3s ease;
+        will-change: transform;
+        cursor: pointer;
+        z-index: 1;
+        text-align: center;
+    }
+
+    .round i {
+        color: #aaa;
+        line-height: 45px;
+    }
+
+    .back {
+        width: 100%;
+        position: absolute;
+        background: #fff;
+        height: 45px;
+        bottom: 0;
+        z-index: 0;
+    }
+
+    .back::after {
+        content: "";
+        display: block;
+        width: 80px;
+        height: 66px;
+        background: #fff;
+        border-radius: 50%;
+        margin-top: -20px;
+        transform: translate(5px, 0);
+        will-change: transform;
+        transition: transform 0.2s ease;
+    }
+
+    .radio:checked+.round {
+        transform: translate(0, -7px);
+        box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.3);
+    }
+
+    .radio:checked+.round i {
+        color: #296E26;
+    }
+
+    #bookmark:checked~.back::after {
+        transform: translate(8px, 0);
+    }
+
+    #list:checked~.back::after {
+        transform: translate(104px, 0);
+    }
+
+    #settings:checked~.back::after {
+        transform: translate(199px, 0);
+    }
+
+    #location:checked~.back::after {
+        transform: translate(296px, 0);
+    }
+</style>
+
+</html>

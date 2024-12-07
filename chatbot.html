@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot with OpenAI</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        #chatbox {
+            width: 400px;
+            height: 500px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 20px auto;
+            overflow-y: scroll;
+        }
+
+        #userInput {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            box-sizing: border-box;
+        }
+
+        .message {
+            margin: 10px 0;
+            padding: 5px;
+        }
+
+        .userMessage {
+            text-align: right;
+        }
+
+        .botMessage {
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="chatbox"></div>
+
+    <input type="text" id="userInput" placeholder="Type a message..." onkeypress="handleKeyPress(event)">
+
+    <script>
+        // Masukkan API key di sini
+        const API_KEY = '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';
+
+        function handleKeyPress(event) {
+            if (event.key === 'Enter') {
+                let userInput = document.getElementById('userInput').value;
+                if (userInput) {
+                    addMessage(userInput, 'userMessage');
+                    getBotResponse(userInput);
+                    document.getElementById('userInput').value = ''; // Bersihkan input setelah enter
+                }
+            }
+        }
+
+        function addMessage(message, className) {
+            let chatbox = document.getElementById('chatbox');
+            let messageDiv = document.createElement('div');
+            messageDiv.classList.add('message', className);
+            messageDiv.textContent = message;
+            chatbox.appendChild(messageDiv);
+            chatbox.scrollTop = chatbox.scrollHeight; // Scroll otomatis ke bawah
+        }
+
+        async function getBotResponse(userInput) {
+            const botMessage = await callOpenAIAPI(userInput);
+            addMessage(botMessage, 'botMessage');
+        }
+
+        async function callOpenAIAPI(userInput) {
+            const apiUrl = "https://api.openai.com/v1/chat/completions";
+            const headers = {
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${API_KEY}`
+            };
+
+            const body = JSON.stringify({
+                model: "gpt-3.5-turbo", // Pastikan modelnya benar
+                messages: [{ "role": "user", "content": userInput }],
+                max_tokens: 150
+            });
+
+
+            try {
+                const response = await fetch(apiUrl, {
+                    method: "POST",
+                    headers: headers,
+                    body: body
+                });
+
+                const result = await response.json();
+                return result.choices[0].message.content;
+            } catch (error) {
+                console.error("Error:", error);
+                return "Maaf, ada masalah dalam menghubungi server.";
+            }
+        }
+    </script>
+
+</body>
+
+</html>

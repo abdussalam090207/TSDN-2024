@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SeOBless Health</title>
+    <link rel="stylesheet"
+        href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+</head>
+
+
+<style>
+    @keyframes fadeOut {
+        0% {
+            opacity: 1;
+        }
+
+        100% {
+            opacity: 0;
+        }
+    }
+
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+
+    body {
+        animation: fadeIn 2s ease forwards;
+    }
+
+    body.fade-out {
+        animation: fadeOut 2s ease forwards;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    /* Tampilan Layar */
+    body {
+        font-family: 'Arial', sans-serif;
+        background: linear-gradient(to bottom, #a1e3a1, #ffffff);
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    .container {
+        text-align: center;
+        width: 100%;
+        height: 40%;
+        margin-top: 25%;
+        max-width: 900px;
+        background-color: #ffffff;
+        padding: 20px;
+        border-radius: 20px;
+        box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+        position: absolute;
+        top: 65%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        animation: slideInRight 0.5s ease forwards;
+
+    }
+
+
+    .illustration img {
+        width: 430px;
+        height: auto;
+        margin: 20px 0;
+        position: absolute;
+        top: 30%;
+        left: 52%;
+        transform: translate(-50%, -50%);
+
+    }
+
+    /* Teks Sambutan */
+    .welcome-text h1 {
+        font-size: 24px;
+        font-weight: bold;
+        color: #34a853;
+        margin-bottom: 10px;
+    }
+
+    .welcome-text p {
+        font-size: 16px;
+        color: #6d6d6d;
+        line-height: 1.5;
+    }
+
+    /* Navigasi */
+    .navigation {
+        margin-top: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    /* Indicator */
+    .indicator {
+        display: flex;
+        gap: 10px;
+    }
+
+    .dot {
+        width: 10px;
+        height: 10px;
+        background-color: #d3d3d3;
+        border-radius: 50%;
+    }
+
+    .dot.active {
+        background-color: #34a853;
+    }
+
+    /* Tombol Next */
+    .next-button {
+        background: linear-gradient(to right, #34a853, #a1e3a1);
+        border: none;
+        color: #fff;
+        font-size: 16px;
+        font-weight: bold;
+        padding: 10px 20px;
+        border-radius: 20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+    }
+
+    .next-button:hover {
+        opacity: 0.9;
+    }
+</style>
+
+<body>
+    <div class="illustration">
+        <img src="img/family.png" alt="Family Illustration">
+    </div>
+
+    <div class="container">
+
+        <!-- Teks Sambutan -->
+        <div class="welcome-text">
+            <h1>Selamat Datang</h1>
+            <p>Langkah kecil Anda hari ini, adalah langkah besar menuju Indonesia yang lebih sehat</p>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <!-- Navigasi -->
+        <div class="navigation">
+            <!-- Indicator -->
+            <div class="indicator">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+
+            <!-- Tombol Next -->
+            <button class="next-button" onclick="window.location.href='info2.html'">Next ></button>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script>
+    document.querySelector('.next-button').addEventListener('click', function (e) {
+        e.preventDefault();
+        const container = document.querySelector('.container');
+        container.classList.add('fade-out');
+        
+        setTimeout(function () {
+            window.location.href = e.target.getAttribute('onclick').replace("window.location.href='", "").replace("'", "");
+        }, 500); // Durasi transisi pudar (0.5 detik)
+    });
+</script>

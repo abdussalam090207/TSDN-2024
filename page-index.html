@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,maximum-scale=1,minimum-scale=1">
+    <title>SeOBless UI</title>
+    <link rel="stylesheet"
+        href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" />
+
+</head>
+<style>
+        .scrollable {
+            width: 100%;
+            height: 100%;
+            overflow: auto; /* Scroll tetap aktif */
+        }
+
+        .scrollable::-webkit-scrollbar {
+            width: 6px; /* Lebar scrollbar */
+            height: 6px; /* Tinggi scrollbar horizontal */
+        }
+
+        .scrollable::-webkit-scrollbar-track {
+            background: #e0f7e0; /* Warna latar belakang track */
+            border-radius: 10px; /* Membuat track melengkung */
+        }
+
+        .scrollable::-webkit-scrollbar-thumb {
+            background-color: #547461; /* Warna thumb scrollbar */
+            border-radius: 10px; /* Membuat thumb melengkung */
+            border: 2px solid #e0f7e0; /* Memberikan margin dengan border */
+        }
+
+        .scrollable::-webkit-scrollbar-thumb:hover {
+            background-color: #27ae60; /* Warna thumb saat hover */
+        }
+
+        /* Firefox */
+        .scrollable {
+            scrollbar-width: 10px; /* Scrollbar lebih kecil */
+            scrollbar-color: #2ecc71 #e0f7e0; /* Warna thumb dan track */
+            
+        }
+    </style>
+</style>
+
+<body>
+    <div class="scrollable">
+        <header>
+            <nav>
+                <div class="info">
+                    <p>Hai!</p>
+                    <p>Selamat datang <span>Abdus</span></p>
+                </div>
+                <div class="img" style="background-image: url(img/WhatsApp\ Image\ 2024-09-15\ at\ 21.06.19.jpeg)"></div>
+            </nav>
+            <div class="search">
+                <span class="las la-search"></span>
+                <input type="text" placeholder="Search ...">
+            </div>
+        </header>
+
+        <main>
+            <div class="categories section-wrapper">
+                <div class="flex-header">
+                    <h2>Rekomendasi</h2>
+                    <a href="category.html">lihat</a>
+                </div>
+                <div class="items">
+                    <div class="item">
+                        <div class="item-img" style="background-image: url(img/Rectangle\ 31.png)"></div>
+                        <h4>Tempe Bacem</h4>
+                    </div>
+                    <div class="item">
+                        <div class="item-img" style="background-image: url(img/Rectangle\ 32.png)"></div>
+                        <h4>Capcay</h4>
+                    </div>
+                    <div class="item">
+                        <div class="item-img" style="background-image: url(img/Rectangle\ 33.png)"></div>
+                        <h4>Sup Ayam</h4>
+                    </div>
+                    <div class="item">
+                        <div class="item-img" style="background-image: url(img/Rectangle\ 34.png)"></div>
+                        <h4>Telur Balado</h4>
+                    </div>
+                    <div class="item">
+                        <div class="item-img" style="background-image: url(img/Rectangle\ 35.png)"></div>
+                        <h4>Toseng Daging</h4>
+                    </div>
+                    <div class="item">
+                        <div class="item-img" style="background-image: url(https://ts2.mm.bing.net/th?q=GAMBAR%20PISANG%20ULI%20bullexotisme.fr)"></div>
+                        <h4>Pisang</h4>
+                    </div>
+
+                </div>
+            </div>
+            <br>
+            <div class="categories section-wrapper">
+                <div class="flex-header">
+                    <h2>Resep</h2>
+                    <a href="category.html">lihat</a>
+                </div>
+                <div class="items">
+                    <div class="item">
+                        <div class="item-img" style="background-image: url(img/Rectangle\ 31\(1\).png)"></div>
+                        <h4>Telur orak-arik</h4>
+                    </div>
+                    <div class="item">
+                        <div class="item-img" style="background-image: url(img/Rectangle\ 32\(1\).png)"></div>
+                        <h4>Salad sayuran</h4>
+                    </div>
+                    <div class="item">
+                        <div class="item-img" style="background-image: url(img/Rectangle\ 33\(1\).png)"></div>
+                        <h4>Tumis Sayuran</h4>
+                    </div>
+                    <div class="item">
+                        <div class="item-img" style="background-image: url(img/Rectangle\ 34\(1\).png)"></div>
+                        <h4>Salad Buah</h4>
+                    </div>
+                    <div class="item">
+                        <div class="item-img" style="background-image: url(img/Rectangle\ 35\(1\).png)"></div>
+                        <h4>Sandwich Tuna</h4>
+                    </div>
+                    <div class="item">
+                        <div class="item-img" style="background-image: url(https://kurio-img.kurioapps.com/21/05/25/76f3e3f2-a513-4c49-b249-de06cbf5fb6f.jpe)"></div>
+                        <h4>Yogurt Granola Buah</h4>
+                    </div>
+
+                </div>
+            </div>
+
+<br>
+            <div class="popular section-wrapper">
+                <div class="flex-header">
+                    <h2>Resep</h2>
+                    <a href="">lihat</a>
+                </div>
+                <div class="items">
+                    <div class="popular-item">
+                        <div class="popular-img" style="background-image: url(img/1.jpeg)"></div>
+                    </div>
+                    <div class="popular-item">
+                        <div class="popular-img" style="background-image: url(img/2.jpeg)"></div>
+                    </div>
+                    <div class="popular-item">
+                        <div class="popular-img" style="background-image: url(img/3.jpeg)"></div>
+                    </div>
+                    <div class="popular-item">
+                        <div class="popular-img" style="background-image: url(img/4.jpeg)"></div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="promo">
+                <div class="items promo-items">
+                    <div class="promo-item">
+                        <div class="promo-img" style="background-image: url(img/apples.png)"></div>
+                        <div class="promo-info">
+                            <h3>30% Discount</h3>
+                            <p>Order any food from app and get discount</p>
+                            <a href="">Order now</a>
+                        </div>
+                    </div>
+                    <div class="promo-item">
+                        <div class="promo-img" style="background-image: url(img/banana.png)"></div>
+                        <div class="promo-info">
+                            <h3>30% Discount</h3>
+                            <p>Order any food from app and get discount</p>
+                            <a href="">Order now</a>
+                        </div>
+                    </div>
+
+                    <div class="promo-item">
+                        <div class="promo-img" style="background-image: url(img/banana.png)"></div>
+                        <div class="promo-info">
+                            <h3>30% Discount</h3>
+                            <p>Order any food from app and get discount</p>
+                            <a href="">Order now</a>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+
+        </main>
+
+
+        <div class="bottom-nav">
+            <div class="bottombar">
+                <input type="radio" class="radio" name="tap" id="bookmark" checked="checked" />
+                <label class="round" for="bookmark">
+                    <i class="fa fa-home"></i>
+                </label>
+
+                <input type="radio" class="radio" name="tap" id="list" />
+                <label class="round" for="list">
+                    <a href="pribadi.html"><i class="fa-solid fa-user"></i></a>
+                </label>
+
+                <input type="radio" class="radio" name="tap" id="settings" />
+                <label class="round" for="settings">
+                    <i class="fa fa-gear"></i>
+                </label>
+
+                <input type="radio" class="radio" name="tap" id="location" />
+                <label class="round" for="location">
+                    <a href="chatbot.html"><i class="fa-brands fa-rocketchat"></i></a>
+                </label>
+
+                <div class="back"></div>
+            </div>
+        </div>
+    </div>
+</body>
+<style>
+    .bottombar {
+        display: flex;
+        position: absolute;
+        width: 100%;
+        height: 55px;
+        bottom: 0;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .radio {
+        display: none;
+    }
+
+    .round {
+        position: relative;
+        width: 45px;
+        height: 45px;
+        background: #fff;
+        border-radius: 50%;
+        transform: translate(0, 5px);
+        transition: transform 0.3s ease;
+        will-change: transform;
+        cursor: pointer;
+        z-index: 1;
+        text-align: center;
+    }
+
+    .round i {
+        color: #aaa;
+        line-height: 45px;
+    }
+
+    .back {
+        width: 100%;
+        position: absolute;
+        background: #fff;
+        height: 45px;
+        bottom: 0;
+        z-index: 0;
+    }
+
+    .back::after {
+        content: "";
+        display: block;
+        width: 80px;
+        height: 66px;
+        background: #fff;
+        border-radius: 50%;
+        margin-top: -20px;
+        transform: translate(5px, 0);
+        will-change: transform;
+        transition: transform 0.2s ease;
+    }
+
+    .radio:checked+.round {
+        transform: translate(0, -7px);
+        box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.3);
+    }
+
+    .radio:checked+.round i {
+        color: #296E26;
+    }
+
+    #bookmark:checked~.back::after {
+        transform: translate(8px, 0);
+    }
+
+    #list:checked~.back::after {
+        transform: translate(104px, 0);
+    }
+
+    #settings:checked~.back::after {
+        transform: translate(199px, 0);
+    }
+
+    #location:checked~.back::after {
+        transform: translate(296px, 0);
+    }
+</style>
+
+</html>
